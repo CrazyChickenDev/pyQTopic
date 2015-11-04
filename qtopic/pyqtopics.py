@@ -24,7 +24,7 @@ class QTopic:
 
     @staticmethod
     def get_some_followers(topic):
-        url = "http://www.quora.com/" + topic + "/followers"
+        url = "https://www.quora.com/" + topic + "/followers"
         html_doc = urllib2.urlopen(url)
         soup = BeautifulSoup(html_doc.read())
         raw_data = str(soup.find_all('a', class_='user'))
@@ -53,7 +53,7 @@ class QTopic:
 
     @staticmethod
     def get_best_questions(topic):
-        url = "http://www.quora.com/" + topic + "/best_questions/rss"
+        url = "https://www.quora.com/" + topic + "/best_questions/rss"
         f = feedparser.parse(url)
         feed_len = len(f.entries)
         links = []
@@ -71,7 +71,7 @@ class QTopic:
 
     @staticmethod
     def get_top_stories(topic):
-        url = "http://www.quora.com/" + topic + "/rss"
+        url = "https://www.quora.com/" + topic + "/rss"
         f = feedparser.parse(url)
         feed_len = len(f.entries)
         links = []
@@ -89,7 +89,7 @@ class QTopic:
 
     @staticmethod
     def get_open_questions(topic):
-        url = "http://www.quora.com/" + topic + "/questions"
+        url = "https://www.quora.com/" + topic + "/questions"
         html_doc = urllib2.urlopen(url)
         soup = BeautifulSoup(html_doc.read())
         raw_data = str(soup.find_all('div', class_='QuestionText'))
